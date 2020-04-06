@@ -8,7 +8,7 @@ Við notuðumst við Python til að gera keylogger sem grípur allar strokur lyk
 Í upphafi er best að setja upp miðað við virtual env.
 
 Þegar er búið að sækja öll dependencies, er nóg að keyra skrána keylogger.py  
-*sudo keylogger.py*
+*python keylogger.py*
 
 Keylogger.py finnur út hvaða tegund af stýrikerfi er í gangi og velur viðeigandi subprocess.  
 Annað hvort linux.py eða windows.py.  
@@ -18,5 +18,5 @@ eyðir loginum út og stofnar annan.
 
 
 ## Made by :
-Ómar Þór Arnarsson & Viktor Þór Freysson
+Ómar Þór Arnarsson & Viktor Þór Freysson  
 otha3@hi.is & vthf1@hi.is
