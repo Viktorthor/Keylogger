@@ -11,7 +11,7 @@
 Please note the instructions can be varying due to different operating systems.
 
 ## Usage :
- To use the portscanner after setting up VENV simply run:
+ To use the keylogger after setting up VENV simply run:
 *python keylogger.py*
 
 Keylogger.py checks what kind of OS is running on the machine and selects the corresponding subprocess, whether it be linux.py or windows.py.  
