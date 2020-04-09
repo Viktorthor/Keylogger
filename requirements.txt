@@ -1,0 +1,5 @@
+
+APScheduler==3.6.3
+pynput==1.6.8
+pyxhook==1.0.0
+yagmail==0.11.224
