@@ -8,6 +8,8 @@
     * 2. source VENV/bin/activate
     * 3. pip install -r requirements.txt
 
+Please note the instructions can be varying due to different operating systems.
+
 ## Usage :
  To use the portscanner after setting up VENV simply run:
 *python keylogger.py*
