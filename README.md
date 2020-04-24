@@ -11,6 +11,8 @@
 Please note the instructions can be varying due to different operating systems.
 
 ## Usage :
+ To activate the automatic exfil option you must fill in the email part of the functions in both linux and windows.
+ When cloned it's only set to a dummy account so please fill in your own information in the commented lines of the sendLog() function.
  To use the keylogger after setting up VENV simply run:
 *python keylogger.py*
 
